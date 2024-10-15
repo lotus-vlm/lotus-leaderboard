@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Title">
+  <meta name="keywords" content="Image Synthesis, Data Augmentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>  -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
+  <link rel="stylesheet" href="extra.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link rel="icon" href="./static/images/icon1.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script>
+      $(document).ready(function() {
+          $('pre').append('<span class="command-copy"><i class="fa fa-clipboard" aria-hidden="true"></i></span>');
+
+          $('code span.command-copy, pre span.command-copy').click(function(e) {
+              var copyText = $(this).parent().text().trim();
+              var copyHex = document.createElement('textarea');
+              copyHex.value = copyText;
+              document.body.appendChild(copyHex);
+              copyHex.select();
+              document.execCommand('copy');
+              document.body.removeChild(copyHex);
+
+              $(this).html('<i class="fa fa-check" aria-hidden="true"></i>');
+              setTimeout(() => {
+                  $(this).html('<i class="fa fa-clipboard" aria-hidden="true"></i>');
+              }, 2000);
+          });
+      });
+  </script>
+
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Title</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=0JH6YbEAAAAJ&hl=en">Boyi Li</a><sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>NVIDIA,</span>
+              <span class="author-block"><sup>2</sup>Stanford University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2407.18908" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2407.18908" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://www.youtube.com/@boyili3727"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/Boyiliee/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Leaderboard. -->
+                <span class="link-block">
+                  <a href="./index.html" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-smile"></i>
+                    </span>
+                    <span>Homepage</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <h2 class="title is-2 has-text-centered" id="leaderboard">Leaderboard</h2>
+          <table class="customers">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th></th>
+                <th colspan="3">Caption Similarity ↑</th>
+                <th colspan="3">Caption Quality (eg. reduced hallucination) ↑</th>
+              </tr>
+              <tr>
+                <th>Scenarios</th>
+                <th>Organization</th>
+                <th>Nuscenes</th>
+                <th>Pexels</th>
+                <th>Robotics</th>
+                <th>Nuscenes</th>
+                <th>Pexels</th>
+                <th>Robotics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>CogAgent</td>
+                <td>Tsinghua&Zhipu AI</td>
+                <td>0.18</td>
+                <td>0.68</td>
+                <td>0.38</td>
+                <td>0.24</td>
+                <td>0.72</td>
+                <td>0.43</td>
+              </tr>
+              <tr>
+                <td>GPT-4V</td>
+                <td>OpenAI</td>
+                <td>0.31</td>
+                <td>0.72</td>
+                <td>0.34</td>
+                <td>0.36</td>
+                <td>0.75</td>
+                <td>0.35</td>
+              </tr>
+              <tr>
+                <td>VILA-1.5-13b</td>
+                <td>NVIDIA</td>
+                <td>0.21</td>
+                <td>0.85</td>
+                <td>0.62</td>
+                <td>0.25</td>
+                <td>0.86</td>
+                <td>0.67</td>
+              </tr>
+              <tr>
+                <td>Gemini-Pro-1.5</td>
+                <td>Google</td>
+                <td>0.42</td>
+                <td>0.87</td>
+                <td>0.63</td>
+                <td>0.45</td>
+                <td>0.87</td>
+                <td>0.67</td>
+              </tr>
+              <tr>
+                <td><b>Wolf(ours)</b></td>
+                <td>NVIDIA</td>
+                <td><b>0.55</b></td>
+                <td><b>0.88</b></td>
+                <td><b>0.72</b></td>
+                <td><b>0.56</b></td>
+                <td><b>0.89</b></td>
+                <td><b>0.75</b></td>
+              </tr>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <p>
+            We are continuously adding more models to the leaderboard. If you would like to add your model, please contact us!
+          </p>
+        </div>
+      </div>
+   
+    </div>
+  </section>
+
+
+<!--   <section class="hero teaser" id="BibTeX">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <h2 class="title is-2 has-text-centered">BibTeX</h2>
+          <pre class="command-copy"><code>@inproceedings{li2024wolf,
+  title={title},
+  author={authors},
+  journal={},
+  year={2024},
+}</code>
+</pre>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+
+</body>
+
+</html>
